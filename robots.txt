@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Disallow: /subscription-agreement.pdf
