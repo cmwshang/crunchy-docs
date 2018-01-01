@@ -1,0 +1,105 @@
+{%extends "base.html" %}
+{%block title%}Sponsors | PostgresOpen SV 2018{%endblock%}
+{%block pagetitle%}PostgresOpen SV 2018{%endblock%}
+{%block content%}
+<h1>Sponsors</h1>
+
+<hr>
+<h3>Sponsorship</h3>
+<p>
+	PostgresOpen wouldn't be possible without the support of our wonderful
+	sponsors!  If you are interested in sponsoring the conference, please
+	see our <b><a href="{{link("becomesponsor/")}}">sponsoring campaign</a></b> and let us know!
+</p>
+<hr>
+
+<h3>Diamond</h3>
+<div class="row text-center">
+{% for p in diamond %}
+	<div class="col-md-6 col-md-4">
+		<!-- Diamond -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% endfor %}
+</div>
+
+<hr>
+
+<h3>Platinum</h3>
+<div class="row text-center">
+{% for p in platinum %}
+	<div class="col-md-6 col-md-4">
+		<!-- Diamond -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<hr>
+
+<h3>Gold</h3>
+{% for p in gold %}
+{% if loop.index0 is divisibleby 3 %}
+<div class="row text-center">
+{% endif %}
+  <div class="col-md-6 col-md-4">
+	<!-- Gold {{ loop.index }} of {{ loop.length }} -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% if loop.index is divisibleby 3 %}
+</div>
+{% endif %}
+{% endfor %}
+</div>
+<hr>
+
+<h3>Silver</h3>
+<div class="row text-center">
+{% for p in silver %}
+  <div class="col-md-6 col-md-4">
+	<!-- Silver -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<hr>
+
+<h3>Supporter</h3>
+<div class="row text-center">
+{% for p in supporter %}
+  <div class="col-md-6 col-md-4">
+	<!-- Silver -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<hr>
+
+<h3>Community Partners</h3>
+<div class="row text-center">
+{% for p in partner %}
+  <div class="col-md-6 col-md-4">
+	<!-- Silver -->
+		<a href="{{p.link}}" target="_blank"><img id="sponsors" src="{{media("images/" + p.largelogo)}}" alt="{{p.name}}"></a>
+		<div class="caption">
+			<small><em>{{p.intro}}</em></small>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<hr>
+{% endblock %}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="PostgresOpen SV 2018" />
+		<meta name="keywords" content="PostgreSQL" />
+		<meta name="author" content="United States PostgreSQL Association" />
+		<meta name="google-site-verification" content="blxbviCSHoY6wxZrtoL4ZEvpdICZTrsIFx0VYEVHbuc" />
+
+
+		<title>Blog | PostgresOpen SV 2018</title>
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@postgresopen">
+		<meta name="twitter:creator" content="@postgresopen">
+		<meta name="twitter:title" content="PostgresOpen | PostgreSQL Conference">
+		<meta name="twitter:description" content="PostgresOpen SV 2018 will be held on September 6th - 7th in Silicon Valley, at the Parc 55 Hilton Hotel.">
+
+		<!-- Facebook Open Graph Meta Tags -->
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="800">
+		<meta property="og:url" content="https://2018.postgresopen.org/">
+		<meta property="og:title" content="PostgresOpen | PostgreSQL Conference">
+		<meta property="og:site_name" content="Postgres Open">
+		<meta property="og:image" content="https://2018.postgresopen.org/static/images/banner2.jpg">
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "ProfessionalService",
+			"url": "https://2018.postgresopen.org/",
+			"logo": "https://2018.postgresopen.org/static/images/sv_elephant.png",
+			"image": "https://2018.postgresopen.org/static/images/banner2.jpg",
+			"email": "mailto:subscribe@postgresopen.org",
+			"description": "PostgresOpen SV 2018 will be held on September 6th - 7th in Silicon Valley, at the Parc 55 Hilton Hotel.",
+			"name": "Postgres Open",
+			"sameAs" : [
+			"https://www.facebook.com/PostgresOpen",
+			"http://www.twitter.com/postgresopen",
+			"https://www.youtube.com/user/postgresopen",
+			"https://plus.google.com/+postgresopen/posts"]
+		}
+		</script>
+
+		<script src="https://2018.postgresopen.org/static/js/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://2018.postgresopen.org/static/js/jquery.matchHeight-min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://2018.postgresopen.org/static/css/style.css" rel="stylesheet">
+
+		<script>
+			(function($) {
+				$(function() {
+					var	$window = $(window),
+						$body = $('body');
+					// Disable animations/transitions until the page has loaded.
+						$body.addClass('is-loading');
+						$window.on('load', function() {
+							$body.removeClass('is-loading');
+						});
+				});
+			})(jQuery);
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-76808262-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+	</head>
+	<body class="blog">
+
+		<!-- Header -->
+			<nav id="header" class="navbar navbar-fixed-top">
+				<div id="header-container" class="container navbar-container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+							<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-brand" href="https://2018.postgresopen.org/">
+							<img id="logo" src="https://2018.postgresopen.org/static/images/sv_elephant.png" alt="PostgresOpen Logo">
+							<h1 class="heading">PostgresOpen SV 2018</h1>
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div id="navbar" class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="https://2018.postgresopen.org/">Home</a></li>
+							<li><a href="https://2018.postgresopen.org/about/">About</a></li>
+							<li class="active"><a href="https://2018.postgresopen.org/blog/">Blog</a></li>
+							<li><a href="https://postgresql.us/events/schedule/pgopen2018/">Schedule</a></li>
+							<li><a href="https://2018.postgresopen.org/tickets/">Registration</a></li>
+							<li><a href="https://2018.postgresopen.org/venue/">Venue & Hotel</a></li>
+							<li><a href="https://2018.postgresopen.org/sponsors/">Sponsors</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+      <section id="main" class="wrapper">
+				<div class="container">
+
+<!-- Main -->
+<h1>Blog</h1>
+<hr>
+
+  <!-- Sponsorship -->
+  <h3>An interview with 2ndQuadrant: whats new and whats coming in Postgres</h3>
+  <h4>Posted By: PostgresOpen on Thursday, August 31</h4>
+  <p>Continuing on down our list of some of the great sponsors we get to sit down and talk to, today we jump in with Simon Riggs of <a href="https://www.2ndquadrant.com/en/">2ndQuadrant</a>.<br/<br/><br/><b>PostgresOpen SV: </b>2ndQuadrant works both with a bunch of US clients as well as contributing to much of Postgres and the ecosystem around it. How does the mix of contributing to core Postgres as well as direct client interaction help improve Postgres overall?<br/><br/><b>Simon Riggs: </b>2ndQuadrant is a major developer of open source PostgreSQL, contributing both major new features and bug fixes regularly. We use our direct client interactions to focus these contributions so we can prioritise the biggest issues for our clients. With over 15 years of customer engagements we have been able to identify bottlenecks and then contribute towards enterprise features that fix them in PostgreSQL, benefiting everyone that uses it. <br/><br/><b>PostgresOpen SV:</b> Postgres 10 is just around the corner, 2ndQuadrant have many developers that contributed to it. Can you share a bit on what you're most excited about in Postgres 10?<br/><br/><b>Simon Riggs: </b>It’s the Big One - the release where we finally get logical replication into core!<br/><br/>2ndQuadrant has supported BDR and <a href="https://github.com/2ndQuadrant/pglogical">pglogical</a> for some years now, though we now have some very important aspects of that added to core PostgreSQL. The new logical replication uses two new commands: PUBLICATION and SUBSCRIPTION to allow users to define flows of changed data from one server to another.<br/><br/>This work has taken many years of effort to bring to the current level, resulting from many 2ndQuadrant developers and various reviewers and testers. It opens up many possible use-cases with this important new replication technology.<br/><br/><b>PostgresOpen SV: </b>Because you are an active participant in the community you have a good idea for where the project is headed beyond Postgres 10... What’s the future look like?<br/><br/><b>Simon Riggs:</b> Very good! Spoiler alert - we win!<br/><br/>Open source PostgreSQL has been growing year on year and we’re attracting interest from the largest enterprises now. There are still some large predators out there but the community is big enough and strong enough to push forwards.<br/><br/>Technically we continue to tune, innovate and evolve. Expect to see many further performance features, new ways of developing and ease of use features - whatever customers need to succeed with PostgreSQL.<br/><br/>From 2ndQuadrant you can expect some big new developments around Bi Directional Replication (BDR), though we also have things brewing around Postgres-XL 10, Barman, repmgr 4, pglogical 3 and pgbouncer as well as other existing projects.<br/><br/> Recent developments include the release of OmniDB, a new web-based admin tool for both PostgreSQL and other DBMS, specially designed around rapid response and ease of use.<br/><br/>We have pursued a joint strategy of providing both working code (available now) and later submitting the features into core PostgreSQL. Postgres-BDR is an open source project from 2ndQuadrant that provides multi-master replication for PostgreSQL. One of the greatest achievements to come out of our work on BDR is the logical replication technology that will be available in PostgreSQL 10, as I previously mentioned. We will be submitting further enhancements of performance and robustness into later releases of PostgreSQL. You can read more about the Postgres-BDR roadmap <a href="https://blog.2ndquadrant.com/news-and-roadmap-for-bdr-multi-master-postgresql/">here</a>.<br/><br/><b>PostgresOpen SV:</b> What are you doing about cloud?<br/><br/><b>Simon Riggs: </b>We’ve been encouraging cloud usage for many years now with contributions such as energy saving low-power mode, EXTENSIONs, database block checksums, group commit and a slew of backup and replication features all specifically aimed at cloud usage. <br/><br/>We’re happy that various cloud vendors have been using PostgreSQL in the cloud for many years now and we believe it’s important for users to have both choice and quality.<br/><br/>2ndQuadrant has offered consulting services and support to customers using cloud services for many years. 2ndQuadrant offers the Trusted PostgreSQL Architecture (TPA) tool to orchestrate and deploy database services for on-premise, public or hybrid clouds. 2ndQuadrant uses TPA to offer Managed and Supported DBaaS to customers, particularly around Postgres-BDR and Postgres-XL, as well as standard Postgres.<br/><br/><b>PostgresOpen SV: </b>Do you see a lot of people moving to PostgreSQL from other databases? If yes, how do you help them with the migration process?<br/><br/><b>Simon Riggs: </b>PostgreSQL is the most popular database when it comes to new adoption. Even existing users of other databases are flocking towards PostgreSQL - and it’s not just to save money. PostgreSQL is fully capable of securely supporting enterprise database systems. <br/><br/>We have developed specialized tools to facilitate migrations from Oracle and other database management systems.  Our team not only consists of the largest collective of PostgreSQL experts globally, they also have a deep knowledge of other DBMS such as Oracle and MySQL.<br/><br/>2ndQuadrant believes in promoting open source PostgreSQL as a solution that is trusted globally by large and small businesses in various industry verticals, highlighting that it's developed by a vibrant community focused on making it more powerful with every release. Using PostgreSQL allows users to break free from vendor lock-in and design a database that is customized for their business needs, something that any company would benefit from.</p>
+  <hr>
+
+
+        </div>
+      </section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<section class="links">
+							<div class="row">
+								<div class="col-sm-6">
+									<h3>Contact Us</h3>
+									<a href="mailto:program2018@postgresopen.org">program2018@postgresopen.org</a>
+								</div>
+								<div class="col-sm-6">
+									<h3>Hotel</h3>
+									<a href="https://2018.postgresopen.org/venue/">
+										Parc 55 Hilton Hotel
+										<br>55 Cyril Magnin St
+										<br>San Francisco, CA 94102
+										<br>(415) 392-8000
+									</a>
+								</div>
+							</div>
+						</section>
+						<div class="row">
+							<div class="col-sm-6">
+								<ul class="copyright">
+									<li>&copy; Untitled. All rights reserved. | PostgresOpen is an associated project of the United States PostgreSQL Association.</li>
+								</ul>
+							</div>
+							<div class="col-sm-6">
+								<ul class="icons">
+									<li>
+										<a href="https://www.facebook.com/PostgresOpen" class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/user/postgresopen" class="icon rounded fa-youtube"><span class="label">YouTube</span></a>
+									</li>
+									<li>
+										<a href="https://twitter.com/postgresopen" class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+									</li>
+									<li>
+										<a href="https://plus.google.com/+postgresopen/posts" class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+	</body>
+</html>

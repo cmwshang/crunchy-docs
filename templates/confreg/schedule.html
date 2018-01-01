@@ -1,0 +1,143 @@
+{%extends "base.html" %}
+{%block title%}Conference Schedule - {{conference}}{%endblock%}
+{%block extrahead%}
+<style media="print">
+#pgHeaderContainer, #pgSideWrap { display:none; }
+div.schedwrap {
+   font-size: 1em;
+}
+</style>
+<style>
+div.schedwrap {
+   border: 1px solid black;
+   position: relative;
+   margin-bottom: 6em;
+}
+div.sessblock {
+
+}
+div.roomheader {
+   font-weight: 700;
+   text-align: center;
+   font-size: 1.1em;
+   line-height: 1.5em;
+}
+div.sessblock a {
+   text-decoration: none;
+   color: black;
+}
+div.sessblock p {
+   display: inline-block;
+   margin: 0;
+}
+.sessblock.roomheader h4 {
+    font-size: 1em;
+}
+{%for track in tracks%}
+div.track{{track.id}} {
+   background-color: {{track.color}};
+}
+{%endfor%}
+   
+</style>
+{%endblock%}
+{%block content%}
+<h1>Schedule</h1>
+<hr>
+<p>
+This schedule is also available for <a href="/m/{{conference.urlname}}/">mobile users</a>
+and an <a href="ical/">iCalendar</a> format is also available.
+<br>
+You can find the full conference information at the
+<a href="{{conference.confurl}}">conference website</a>.
+This schedule is subject to changes and will be updated when any
+changes occur.
+</p>
+
+<!--
+{% for day in days %}
+Day.day: {{day.day}}
+{%for room in day.rooms|sort(attribute='leftpos')%}
+Room.name: {{room.name}}
+Room.leftpos: {{room.leftpos}}
+{%for session in day.sessions%}
+Session.leftpos: {{session.leftpos}}
+Session.widthpos: {{session.widthpos}}
+Session.id: {{session.id}}
+Session.timeslot: {{session.timeslot}}
+Session.track.id: {{session.track.id}}
+Session.title: {{session.title}}
+{%for speaker in session.speakers%}
+Speaker.id: {{speaker.id}}
+Speaker.name: {{speaker.name}}
+{%endfor%}
+{%endfor%}
+{%endfor%}
+{%endfor%}
+
+-------------------------------
+
+{% for day in days %}
+--- container
+--- row
+Day.day: {{day.day}}
+{%for room in day.rooms|sort(attribute='leftpos')%}
+--- col-sm-4
+--- box
+Room.name: {{room.name}}
+Room.leftpos: {{room.leftpos}}
+{%for session in day.sessions%}
+{%if session.leftpos == room.leftpos or session.widthpos == 1198 %}
+--- session block
+Session.leftpos: {{session.leftpos}}
+Session.widthpos: {{session.widthpos}}
+Session.id: {{session.id}}
+Session.timeslot: {{session.timeslot}}
+Session.track.id: {{session.track.id}}
+Session.title: {{session.title}}
+{%for speaker in session.speakers%}
+Speaker.id: {{speaker.id}}
+Speaker.name: {{speaker.name}}
+{%endfor%}
+{%endif%}
+{%endfor%}
+{%endfor%}
+{%endfor%}
+
+-->
+
+{% for day in days %}
+   <section class="wrapper special">
+      <div class="container">
+         <div class="row">
+         <hr>
+         <h2>{{day.day|datetimeformat("%A, %B %d")}}</h2>
+         {%for room in day.rooms|sort(attribute='leftpos')%}
+            <div class="col-sm-4">
+               <section class="box">
+                  <h4 style="text-align:center;"><div class="sessblock roomheader">{{room.name}}</div></h4>
+                  <hr>
+                  {%for session in day.sessions%}
+                  {%if session.leftpos == room.leftpos or session.widthpos == 1198 %}
+                     <div class="sessblock track{{session.track.id}}"></div>
+                     {%if session.id%}
+                       <a href="session/{{session.id}}-{{session.title|slugify}}/">{{session.timeslot}}<br/><b>{{session.title}}</b><br/></a>
+                     {%else%}
+                        {{session.timeslot}} - <b>{{session.title}}</b>
+                     {%endif%}
+                     {%for speaker in session.speakers %}{%if loop.first%}{%else%}, {%endif%}<i><a href="speaker/{{speaker.id}}-{{speaker.name|slugify}}/">{{speaker.name}}</a></i>{%endfor%}
+                    <hr>
+                  {%endif%}
+                  {%endfor%}
+               </section>
+             </div>
+         {%endfor%}
+      </div>
+      </div>
+   </section>
+{%endfor%}
+
+</div>
+</section>
+
+{%endblock%}

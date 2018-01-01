@@ -1,0 +1,33 @@
+
+{%extends "base.html" %}
+{%block title%}Conference Schedule - {{conference}}{%endblock%}
+{%block content%}
+<h1>Session</h1>
+<a href="../../">Back</a>
+<hr>
+<h2>{{session.title}}</h2>
+<p>
+{%if session.starttime%}<b>Date:</b> {{session.starttime.strftime("%Y-%m-%d")}}<br/>{%endif%}
+{%if session.starttime%}<b>Time:</b> {{session.starttime.strftime("%H:%M")}} - {{session.endtime.strftime("%H:%M")}}<br/>{%endif%}
+<b>Room:</b> {{session.room.roomname}}<br/>
+{%if conference.skill_levels %}
+<b>Level:</b> {{session.skill_level_string}}<br/>
+{%endif%}
+{%if conference.feedbackopen and session.can_feedback%}
+<b>Feedback:</b> <a href="/events/feedback/{{conference.urlname}}/{{session.id}}/">Leave feedback</a><br/>
+{%endif%}
+</p>
+
+<p>
+{{session.abstract|markdown}}
+</p>
+
+{%for speaker in session.speaker.all()%}
+{%if loop.first%}
+<h2>Speaker</h2>
+{%endif%}
+<b><a href="../../speaker/{{speaker.id}}-{{speaker.name|slugify}}/">{{speaker.name}}</a></b><br/>
+{%endfor%}
+
+{%endblock%}
+
