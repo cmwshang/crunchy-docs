@@ -29,7 +29,7 @@ function create {
 
   # This won't be necessary to include after the modified converter
 
-  echo "{%extends "base.html" %}
+  echo "{%extends \"base.html\" %}
   {%block title%}Installation | Crunchy Container Suite{%endblock%}
   {%block pagetitle%}Crunchy Container Suite{%endblock%}
   {%block content%}" >> ./templates/pages/index.html
