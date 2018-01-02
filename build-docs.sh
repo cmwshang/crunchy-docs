@@ -25,11 +25,19 @@ if [[ "$#" -le 1 ]]; then
 fi
 
 function create {
-  python asciidoc.py --no-header-footer -o ./templates/pages/index.html ./$NAME.adoc
+  python asciidoc.py --no-header-footer -o ./templates/pages/$NAME.html ./$NAME.adoc
 
   # This won't be necessary to include after the modified converter
-  sed -i '/<div class="sect1">/i {%extends "base.html" %}\n{%block title%}Installation | Crunchy Container Suite{%endblock%}\n{%block pagetitle%}Crunchy Container Suite{%endblock%}\n{%block content%}' ./templates/pages/index.html
+
+  echo "{%extends "base.html" %}
+  {%block title%}Installation | Crunchy Container Suite{%endblock%}
+  {%block pagetitle%}Crunchy Container Suite{%endblock%}
+  {%block content%}" >> ./templates/pages/index.html
+
+  cat ./templates/pages/$NAME.html >> ./templates/pages/index.html
   echo "{% endblock %}" >> ./templates/pages/index.html
+
+  rm ./templates/pages/$NAME.html
 }
 
 function delete {
