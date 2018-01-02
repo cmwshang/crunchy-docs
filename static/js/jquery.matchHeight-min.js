@@ -20,3 +20,9 @@ if (!isMobile()) {
     $('.box').matchHeight();
   });
 }
+
+if (!isMobile()) {
+  $(function() {
+    $('.col-lg-6').matchHeight();
+  });
+}
