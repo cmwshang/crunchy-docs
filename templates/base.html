@@ -54,9 +54,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 		<!-- Custom CSS -->
-		<link href="css/main.css" rel="stylesheet">
+		<link href="{{media("css/main.css")}}" rel="stylesheet">
 
 		{%block extrahead%}{%endblock%}
+
 	</head>
 	<body>
 		<!-- Navigation -->
@@ -148,17 +149,17 @@
 					<!-- Copyright -->
 					<div id="copyright">
 					<div class="container">
-						© 2017 Crunchy Data Solutions, Inc.
+						© 2018 Crunchy Data Solutions, Inc.
 					</div>
 				</div>
 			</div> <!-- /#page-content-wrapper -->
 		</div> <!-- /#content-wrapper -->
 
 		<!-- Javascript -->
-		<script src="js/jquery.min.js"></script>
+		<script src="{{media("js/jquery.min.js")}}"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="js/jquery.matchHeight-min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="{{media("js/jquery.matchHeight-min.js")}}"></script>
+		<script src="{{media("js/main.js")}}"></script>
 
 	</body>
 </html>
