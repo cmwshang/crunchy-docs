@@ -29,11 +29,11 @@ function create {
 
   # This won't be necessary to include after the modified converter
   sed -i '/<div class="sect1">/i {%extends "base.html" %}\n{%block title%}Installation | Crunchy Container Suite{%endblock%}\n{%block pagetitle%}Crunchy Container Suite{%endblock%}\n{%block content%}' ./templates/pages/$NAME.html
-  echo "{% endblock %}" >> ./templates/pages/$NAME.html
+  echo "{% endblock %}" >> ./templates/pages/index.html
 }
 
 function delete {
-  rm ./templates/pages/$NAME.html
+  rm ./templates/pages/index.html
 }
 
 case $OPERATION in
