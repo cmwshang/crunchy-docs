@@ -25,7 +25,7 @@ if [[ "$#" -le 1 ]]; then
 fi
 
 function create {
-  python asciidoc.py --no-header-footer -o ./$NAME.html ./$NAME.adoc
+  python asciidoc.py --no-header-footer -o ./templates/pages/$NAME.html ./$NAME.adoc
 }
 
 function delete {

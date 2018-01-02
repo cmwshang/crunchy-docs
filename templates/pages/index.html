@@ -1,141 +1,25 @@
-<!DOCTYPE HTML>
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Leading provider of certified open source PostgreSQL and PostgreSQL related technologies, support and training for enterprise and cloud-native deployments.">
-		<title>Crunchy Container Suite | Crunchy Data</title>
-		<link rel="icon" href="favicon.ico" />
-
-		<!-- Twitter Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@crunchydb">
-		<meta name="twitter:creator" content="@crunchydb">
-		<meta name="twitter:title" content="Crunchy Container Suite | Crunchy Data">
-		<meta name="twitter:description" content="Leading provider of certified open source PostgreSQL and PostgreSQL related technologies, support and training for enterprise and cloud-native deployments.">
-
-		<!-- Facebook Open Graph Meta Tags -->
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="800">
-		<meta property="og:url" content="https://www.crunchydata.com">
-		<meta property="og:title" content="Crunchy Container Suite | Crunchy Data">
-		<meta property="og:site_name" content="Crunchy Data">
-		<meta property="og:image" content="https://www.crunchydata.com/images/logo.png">
-
-		<!-- Structured Data -->
-		<script type="application/ld+json">
-		{
-		  "@context": "http://schema.org",
-		  "@type": "ProfessionalService",
-		  "url": "https://www.crunchydata.com/",
-		  "logo": "https://www.crunchydata.com/images/logo.png",
-		  "image": "https://www.crunchydata.com/images/hippo.png",
-		  "email": "mailto:info@crunchydata.com",
-		  "description": "Leading provider of certified open source PostgreSQL and PostgreSQL related technologies, support and training for enterprise and cloud-native deployments.",
-		  "name": "Crunchy Data",
-		  "telephone": "+1-843-737-6045",
-		  "sameAs" : [
-		    "http://www.twitter.com/crunchydb",
-		    "http://www.linkedin.com/company-beta/2833715/",
-		    "http://www.github.com/crunchydata",
-		    "http://www.plus.google.com/+Crunchydatasolutionsinc"]
-		}
-		</script>
-
-		<!-- Bootstrap -->
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-		<!-- Animate CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-		<!-- Custom CSS -->
-		<link href="css/main.css" rel="stylesheet">
-
-	</head>
-	<body>
-		<!-- Navigation -->
-    <nav id="header" class="navbar navbar-fixed-top fixedtheme">
-		  <div id="header-container" class="container navbar-container">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-		      	<i class="fa fa-bars"></i>
-		      </button>
-		      <a class="navbar-brand" href="/">
-		      	<img id="logo" src="images/logo.svg" alt="Crunchy Data Logo">
-	  		  </a>
-		    </div>
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div id="navbar" class="collapse navbar-collapse">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/">Home</a></li>
-            <li><a href='/about'>About</a></li>
-            <li><a href='https://github.com/CrunchyData/crunchy-containers/releases'>Releases</a></li>
-						<li class="active"><a href='/installation'>Installation</a></li>
-						<li><a href='/usage'>Usage</a></li>
-            <li><a href='/troubleshooting'>Troubleshooting</a></li>
-            <li><a href='https://github.com/crunchydata/crunchy-containers'>Source Code</a></li>
-            <li><a href='https://github.com/CrunchyData/crunchy-containers/issues'>Issues</a></li>
-		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
-		<div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">Crunchy Container Suite</a>
-                </li>
-                <li>
-                    <a href="#_project_setup_amp_docker_installation">Project Setup</a>
-                </li>
-								<li>
-                    <a href="#_installing_docker">Docker Environment</a>
-                </li>
-                <li>
-                    <a href="#_openshift_environment">OpenShift Environment</a>
-                </li>
-                <li>
-                    <a href="#_kubernetes_environment">Kubernetes Environment</a>
-                </li>
-                <li>
-                    <a href="#_legal_notices">Legal Notices</a>
-                </li>
-								<form class="navbar-form navbar-left" role="search">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Search">
-									</div>
-								</form>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-				<div id="page-content-wrapper">
-			    <div class="bkg one">
-			      <div class="container">
-<!---------------------- ORIGINAL GENERATED ------------------->
+{%extends "base.html" %}
+{%block title%}Installation | Crunchy Container Suite{%endblock%}
+{%block pagetitle%}Crunchy Container Suite{%endblock%}
+{%block content%}
 <div class="sect1">
-<h1 class="page-header__title">Installation</h1>
-<h2 id="_project_setup_amp_docker_installation">Project Setup</h2>
+<h2 id="_project_setup_amp_docker_installation">Project Setup &amp; Docker Installation</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>The crunchy-containers can run on different environments including:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<strong>Docker 1.12</strong>
+Docker 1.12
 </p>
 </li>
 <li>
 <p>
-<strong>OpenShift Container Platform</strong>
+OpenShift Container Platform
 </p>
 </li>
 <li>
 <p>
-<strong>Kubernetes 1.5+</strong>
+Kubernetes 1.5+
 </p>
 </li>
 </ul></div>
@@ -562,46 +446,4 @@ with installation can occur unless you have a resolving hostname.</p></div>
 <div class="paragraph"><p>Crunchy, Crunchy Data Solutions, Inc. and the Crunchy Hippo Logo are trademarks of Crunchy Data Solutions, Inc.</p></div>
 </div>
 </div>
-
-<!--------------------- END GENERATED SECTION ---------------------------->
-</div>
-</div>
-
-<div id="bottom" class="highlights animated fadeIn">
-<a href="/contact">
-Contact Us for More Information <i class="fa fa-envelope-o"></i>
-</a>
-<a target="_blank" href="http://www.prweb.com/releases/2017/03/prweb14178221.htm">
-Crunchy Data Announces PostgreSQL STIG <i class="fa fa-external-link"></i>
-</a>
-</div>
-<!-- Footer -->
-<div id="footer">
-<div class="container">
-<section>
-  <ul class="contact">
-    <li><a target='_blank' href="https://twitter.com/crunchydb" class="fa fa-twitter"><span>Twitter</span></a></li>
-    <li><a target='_blank' target='_blank' href="https://www.youtube.com/channel/UCooRnlDz6VLAbFyKIChz4fg" class="fa fa-youtube"><span>YouTube</span></a></li>
-    <li><a target='_blank' href="https://github.com/crunchydata" class="fa fa-github"><span>GitHub</span></a></li>
-  </ul>
-</section>
-</div>
-</div>
-
-<!-- Copyright -->
-<div id="copyright">
-<div class="container">
-© 2017 Crunchy Data Solutions, Inc.
-</div>
-</div>
-</div> <!-- /#page-content-wrapper -->
-</div> <!-- /#content-wrapper -->
-
-<!-- Javascript -->
-<script src="js/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/jquery.matchHeight-min.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-</html>
+{% endblock %}
