@@ -318,10 +318,11 @@ OpenShift Enterprise on your host. The main instructions are here:</p></div>
 <div class="paragraph"><p><strong>Note:</strong> If you install OpenShift Enterprise on a server with less than <code>16GB</code> memory and <code>40GB</code>
 of disk, the following Ansible variables need to be added to <code>~/.config/openshift/installer.cfg.yml</code>
 prior to installation:</p></div>
-<div class="paragraph"><p>```
-openshift_check_min_host_disk_gb: <em>10</em> # min 10gb disk
-openshift_check_min_host_memory_gb: <em>3</em> # min 3gb memory
-```</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>openshift_check_min_host_disk_gb: '10' # min 10gb disk
+openshift_check_min_host_memory_gb: '3' # min 3gb memory</code></pre>
+</div></div>
 <div class="paragraph"><p>If you are using OpenShift Origin, the installation instructions for <strong>oc cluster up</strong>
 can be found <a href="https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md">here</a>.</p></div>
 <div class="sect3">
@@ -443,7 +444,7 @@ with installation can occur unless you have a resolving hostname.</p></div>
 <div class="sect1">
 <h2 id="_legal_notices">Legal Notices</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Copyright © 2017 Crunchy Data Solutions, Inc.</p></div>
+<div class="paragraph"><p>Copyright © 2018 Crunchy Data Solutions, Inc.</p></div>
 <div class="paragraph"><p>CRUNCHY DATA SOLUTIONS, INC. PROVIDES THIS GUIDE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF NON INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p></div>
 <div class="paragraph"><p>Crunchy, Crunchy Data Solutions, Inc. and the Crunchy Hippo Logo are trademarks of Crunchy Data Solutions, Inc.</p></div>
 </div>
