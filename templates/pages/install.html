@@ -1,21 +1,25 @@
+{%extends "base.html" %}
+{%block title%}Installation | Crunchy Container Suite{%endblock%}
+{%block pagetitle%}Crunchy Container Suite{%endblock%}
+{%block content%}
 <div class="sect1">
-<h2 id="_project_setup_amp_docker_installation">Project Setup &amp; Docker Installation</h2>
+<h2 id="_project_setup">Project Setup</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>The crunchy-containers can run on different environments including:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-Docker 1.12
+<strong>Docker 1.12</strong>
 </p>
 </li>
 <li>
 <p>
-OpenShift Container Platform
+<strong>OpenShift Container Platform 3.6</strong>
 </p>
 </li>
 <li>
 <p>
-Kubernetes 1.5+
+<strong>Kubernetes 1.8+</strong>
 </p>
 </li>
 </ul></div>
@@ -166,7 +170,7 @@ you wish to install. The RPMs can be found <a href="https://yum.postgresql.org/r
 </div></div>
 </div>
 <div class="sect2">
-<h3 id="_installing_docker">Installing Docker</h3>
+<h3 id="_docker_environment">Docker Environment</h3>
 <div class="paragraph"><p>As good practice, at this point you&#8217;ll update your system.</p></div>
 <div class="literalblock">
 <div class="content">
@@ -303,13 +307,17 @@ README.txt for command-line usage for the ./create-pv.sh command.</p></div>
 </div>
 </div>
 </div>
+{%extends "base.html" %}
+{%block title%}Installation | Crunchy Container Suite{%endblock%}
+{%block pagetitle%}Crunchy Container Suite{%endblock%}
+{%block content%}
 <div class="sect1">
 <h2 id="_openshift_environment">OpenShift Environment</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_installation">Installation</h3>
 <div class="paragraph"><p>See the OpenShift installation guide for details on how to install
-OpenShift Enterprise on your host.  The main instructions are here:</p></div>
+OpenShift Enterprise on your host. The main instructions are here:</p></div>
 <div class="paragraph"><p><a href="https://docs.openshift.com/container-platform/3.6/install_config/install/quick_install.html">https://docs.openshift.com/container-platform/3.6/install_config/install/quick_install.html</a></p></div>
 <div class="paragraph"><p><strong>Note:</strong> If you install OpenShift Enterprise on a server with less than <code>16GB</code> memory and <code>40GB</code>
 of disk, the following Ansible variables need to be added to <code>~/.config/openshift/installer.cfg.yml</code>
@@ -318,6 +326,8 @@ prior to installation:</p></div>
 openshift_check_min_host_disk_gb: <em>10</em> # min 10gb disk
 openshift_check_min_host_memory_gb: <em>3</em> # min 3gb memory
 ```</p></div>
+<div class="paragraph"><p>If you are using OpenShift Origin, the installation instructions for <strong>oc cluster up</strong>
+can be found <a href="https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md">here</a>.</p></div>
 <div class="sect3">
 <h4 id="_system_policies_for_pvc_creation_listing">System policies for PVC creation/listing</h4>
 <div class="paragraph"><p>In order to allow the <strong>system</strong> user to be able to create and list
@@ -345,6 +355,10 @@ work using NFS.</p></div>
 </div>
 </div>
 </div>
+{%extends "base.html" %}
+{%block title%}Installation | Crunchy Container Suite{%endblock%}
+{%block pagetitle%}Crunchy Container Suite{%endblock%}
+{%block content%}
 <div class="sect1">
 <h2 id="_kubernetes_environment">Kubernetes Environment</h2>
 <div class="sectionbody">
@@ -434,6 +448,10 @@ with installation can occur unless you have a resolving hostname.</p></div>
 </div>
 </div>
 </div>
+{%extends "base.html" %}
+{%block title%}Installation | Crunchy Container Suite{%endblock%}
+{%block pagetitle%}Crunchy Container Suite{%endblock%}
+{%block content%}
 <div class="sect1">
 <h2 id="_legal_notices">Legal Notices</h2>
 <div class="sectionbody">
@@ -442,3 +460,4 @@ with installation can occur unless you have a resolving hostname.</p></div>
 <div class="paragraph"><p>Crunchy, Crunchy Data Solutions, Inc. and the Crunchy Hippo Logo are trademarks of Crunchy Data Solutions, Inc.</p></div>
 </div>
 </div>
+{% endblock %}

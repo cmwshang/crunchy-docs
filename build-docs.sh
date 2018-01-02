@@ -26,10 +26,14 @@ fi
 
 function create {
   python asciidoc.py --no-header-footer -o ./templates/pages/$NAME.html ./$NAME.adoc
+
+  # This won't be necessary to include after the modified converter
+  sed -i '/<div class="sect1">/i {%extends "base.html" %}\n{%block title%}Installation | Crunchy Container Suite{%endblock%}\n{%block pagetitle%}Crunchy Container Suite{%endblock%}\n{%block content%}' ./templates/pages/$NAME.html
+  echo "{% endblock %}" >> ./templates/pages/$NAME.html
 }
 
 function delete {
-  rm $NAME.html
+  rm ./templates/pages/$NAME.html
 }
 
 case $OPERATION in
