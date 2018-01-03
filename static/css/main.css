@@ -43,10 +43,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 1.9em;
-  color: #419bdc;
-  letter-spacing: .4px;
-  font-weight: 300;
+  font-size: 1.8em;
   text-transform: capitalize;
 }
 
