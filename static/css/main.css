@@ -28,9 +28,10 @@ h6,
   font-family: 'Droid Sans', sans-serif;
   color: #419bdc;
   font-weight: 600;
-  text-transform: uppercase;
   padding-top: 1.5em;
   padding-bottom: 1em;
+  margin: 0 auto;
+  text-transform: capitalize;
 }
 
 pre {
@@ -43,11 +44,6 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 1.9em;
-  letter-spacing: .4px;
-  font-weight: 300;
-  margin: 0 auto;
-  padding-top: 0;
-  text-transform: capitalize;
 }
 
 h3, .h3 {
