@@ -26,12 +26,12 @@ h6,
 .h5,
 .h6 {
   font-family: 'Droid Sans', sans-serif;
-  color: #419bdc;
-  font-weight: 300;
+  color: #121212;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 auto;
   padding-top: 1.5em;
   padding-bottom: 1em;
-  margin: 0 auto;
-  text-transform: capitalize;
 }
 
 pre {
@@ -44,6 +44,10 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 1.9em;
+  color: #419bdc;
+  letter-spacing: .4px;
+  font-weight: 300;
+  text-transform: capitalize;
 }
 
 h3, .h3 {
@@ -781,7 +785,7 @@ div#quote {
 	/* border-bottom-style: solid; */
 	/* border-top-style: solid; */
 	/* padding-bottom: 20px; */
-	padding-top: 1.4em;
+  padding-top: 1.4em;
 	/* background-attachment: fixed; */
 	/* background-color: #ffffff; */
 	/* background-position: left top; */
