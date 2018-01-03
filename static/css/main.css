@@ -1019,10 +1019,10 @@ i.fa.small:before {
 }
 
 * > .fa.fa-hover-show,
-*:hover > .fa.fa-hover-hidden {
+*:active > .fa.fa-hover-hidden {
   display: none;
 }
-*:hover > .fa.fa-hover-show {
+*:active > .fa.fa-hover-show {
   display: inline-block;
 }
 
