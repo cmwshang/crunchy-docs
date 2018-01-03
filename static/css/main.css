@@ -26,7 +26,7 @@ h6,
 .h5,
 .h6 {
   font-family: 'Droid Sans', sans-serif;
-  color: #121212;
+  color: #419bdc;
   font-weight: 600;
   text-transform: uppercase;
   padding-top: 1.5em;
@@ -41,14 +41,9 @@ h1, .h1 {
   font-size: 1.5em;
 }
 
-h1.sidepage {
-  font-size: 3em;
-}
-
 h2, .h2 {
   font-size: 1.9em;
   letter-spacing: .4px;
-  color: #419bdc;
   font-weight: 300;
   margin: 0 auto;
   padding-top: 0;
@@ -56,6 +51,10 @@ h2, .h2 {
 }
 
 h3, .h3 {
+  font-size: 1.4em;
+}
+
+h4, .h4 {
   font-size: 1.2em;
 }
 
@@ -71,6 +70,10 @@ a {
 
 a:hover {
   color: #d33f49;
+}
+
+.sect1 {
+    margin-top: 3em;
 }
 
 ul.alt {
@@ -782,7 +785,7 @@ div#quote {
 	/* border-bottom-style: solid; */
 	/* border-top-style: solid; */
 	/* padding-bottom: 20px; */
-	padding-top: 7em;
+	padding-top: 4em;
 	/* background-attachment: fixed; */
 	/* background-color: #ffffff; */
 	/* background-position: left top; */
