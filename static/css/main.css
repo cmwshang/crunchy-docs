@@ -67,7 +67,8 @@ a {
 }
 
 a:hover {
-  color: #d33f49;
+  color: #121212;
+  text-decoration: none;
 }
 
 .sect1 {
@@ -157,6 +158,10 @@ img#logo {
 .navbar-default .navbar-toggle {
 	border: none;
 	color: #121212;
+}
+
+.navbar-nav > li > a {
+  color: #121212;
 }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
