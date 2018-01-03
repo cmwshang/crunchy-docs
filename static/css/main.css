@@ -1022,7 +1022,8 @@ i.fa.small:before {
 *:active > .fa.fa-hover-hidden {
   display: none;
 }
-*:active > .fa.fa-hover-show {
+*:active > .fa.fa-hover-show,
+.open>*:active > .fa.fa-hover-show {
   display: inline-block;
 }
 
