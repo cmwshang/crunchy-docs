@@ -38,6 +38,8 @@ function create {
   echo "{% endblock %}" >> ./templates/pages/$NAME.html
 
   rm ./templates/pages/temp.html
+
+  sed -i -e 's:\bimages/\S*\.png\b:{{media("&")}}:g' ./templates/pages/$NAME.html
 }
 
 function delete {
