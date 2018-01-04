@@ -19,7 +19,7 @@ OPERATION=$2
 if [[ "$#" -le 1 ]]; then
   echo "Usage:"
   echo "   $0 <name> <operation>"
-  echo "   - name: readme | install | examples | metrics | pitr | smoketest | dedicated | containers | backrest"
+  echo "   - name: readme | install | usage | metrics | pitr | dedicated | containers | backrest"
   echo "   - operation: create | delete"
   exit
 fi
