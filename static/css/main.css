@@ -305,7 +305,8 @@ li.last-item {
 
 .sidebar-nav li.has-child > a:before {
    color: #fff;
-   content: '▾  ';
+   content: '▾';
+   margin-right: 5px;
 }
 
 .sidebar-nav li a:hover {
@@ -338,9 +339,10 @@ li.last-item {
     padding: 0em 1em;
 }
 
-.sidebar-nav li ul li a > a:before {
+.sidebar-nav li ul li > a:before {
    color: #fff;
-   content: '-  ';
+   content: '-';
+   margin-right: 5px;
 }
 
 @media(min-width:768px) {
