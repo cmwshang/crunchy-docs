@@ -29,6 +29,8 @@ function create {
 
   # This won't be necessary to include after the modified converter
 
+  rm ./templates/pages/$NAME.html
+
   echo "{%extends \"base.html\" %}
   {%block title%}Installation | Crunchy Container Suite{%endblock%}
   {%block pagetitle%}Crunchy Container Suite{%endblock%}

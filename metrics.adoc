@@ -193,10 +193,11 @@ firewall-cmd --reload
 
 === node_exporter
 
-The tables below list all existing collectors that are gathered by the node_exporter.
+The tables below list all existing collectors that are gathered by the link:https://github.com/prometheus/node_exporter[node_exporter].
+This tool collects hardware and OS level metrics exposed by the kernel as part of the crunchy-collect container.
 
 
-.*Enabled by Default*
+.*Table 1: Enabled by Default*
 
 [format="csv", options="header"]
 |===
@@ -231,7 +232,7 @@ zfs, Exposes link:http://open-zfs.org/[ZFS] performance statistics.
 |===
 
 
-.*Disabled by Default*
+.*Table 2: Disabled by Default*
 
 The following table contains metrics that are not enabled by default; these can be enabled using the `--collectors.enabled` flag.
 
@@ -256,7 +257,7 @@ tcpstat, Exposes TCP connection status information from `/proc/net/tcp` and `/pr
 |===
 
 
-.*Deprecated*
+.*Table 3: Deprecated*
 
 These metrics will be deprecated and (re)moved in future releases of node_exporter.
 
@@ -277,7 +278,7 @@ These metrics will be deprecated and (re)moved in future releases of node_export
 
 === postgres_exporter
 
-postgres_exporter focuses on collecting PostgreSQL server metrics.
+The link:https://github.com/wrouesnel/postgres_exporter[postgres_exporter] collects PostgreSQL server metrics as part of the crunchy-collect container.
 
 
 .*Table 1: General*

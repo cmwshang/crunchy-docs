@@ -249,13 +249,14 @@ firewall-cmd --reload</code></pre>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_node_exporter">node_exporter</h3>
-<div class="paragraph"><p>The tables below list all existing collectors that are gathered by the node_exporter.</p></div>
+<div class="paragraph"><p>The tables below list all existing collectors that are gathered by the <a href="https://github.com/prometheus/node_exporter">node_exporter</a>.
+This tool collects hardware and OS level metrics exposed by the kernel as part of the crunchy-collect container.</p></div>
 <div class="tableblock">
 <table rules="all"
 width="100%"
 frame="border"
 cellspacing="0" cellpadding="4">
-<caption class="title">Table 1. <strong>Enabled by Default</strong></caption>
+<caption class="title">Table 1. <strong>Table 1: Enabled by Default</strong></caption>
 <col width="50%" />
 <col width="50%" />
 <thead>
@@ -376,7 +377,7 @@ cellspacing="0" cellpadding="4">
 </tbody>
 </table>
 </div>
-<div class="paragraph"><div class="title"><strong>Disabled by Default</strong></div><p>The following table contains metrics that are not enabled by default; these can be enabled using the <code>--collectors.enabled</code> flag.</p></div>
+<div class="paragraph"><div class="title"><strong>Table 2: Disabled by Default</strong></div><p>The following table contains metrics that are not enabled by default; these can be enabled using the <code>--collectors.enabled</code> flag.</p></div>
 <div class="tableblock">
 <table rules="all"
 width="100%"
@@ -454,7 +455,7 @@ cellspacing="0" cellpadding="4">
 </tbody>
 </table>
 </div>
-<div class="paragraph"><div class="title"><strong>Deprecated</strong></div><p>These metrics will be deprecated and (re)moved in future releases of node_exporter.</p></div>
+<div class="paragraph"><div class="title"><strong>Table 3: Deprecated</strong></div><p>These metrics will be deprecated and (re)moved in future releases of node_exporter.</p></div>
 <div class="tableblock">
 <table rules="all"
 width="100%"
@@ -485,7 +486,7 @@ cellspacing="0" cellpadding="4">
 </div>
 <div class="sect2">
 <h3 id="_postgres_exporter">postgres_exporter</h3>
-<div class="paragraph"><p>postgres_exporter focuses on collecting PostgreSQL server metrics.</p></div>
+<div class="paragraph"><p>The <a href="https://github.com/wrouesnel/postgres_exporter">postgres_exporter</a> collects PostgreSQL server metrics as part of the crunchy-collect container.</p></div>
 <div class="paragraph"><div class="title"><strong>Table 1: General</strong></div><p>The following are some general metrics it collects:</p></div>
 <div class="tableblock">
 <table rules="all"
