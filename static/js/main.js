@@ -17,3 +17,5 @@ $('a.disabled').click(function(e)
 {
     e.preventDefault();
 });
+
+$('.sidebar-nav li:has(ul)').addClass('has-child');
