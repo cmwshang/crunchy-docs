@@ -280,7 +280,7 @@ These metrics will be deprecated and (re)moved in future releases of node_export
 postgres_exporter focuses on collecting PostgreSQL server metrics.
 
 
-.*General*
+.*Table 1: General*
 
 The following are some general metrics it collects:
 
@@ -292,7 +292,7 @@ pg_postmaster, Time at which postmaster started, GAUGE, `SELECT pg_postmaster_st
 |===
 
 
-.*pg_stat_user_tables*
+.*Table 2: pg_stat_user_tables*
 
 These metrics are general statistics on tables.
 
@@ -323,7 +323,7 @@ autoanalyze_count, Number of times this table has been analyzed by the autovacuu
 |===
 
 
-.*pg_database*
+.*Table 3: pg_database*
 
 These statistics provide database queries.
 

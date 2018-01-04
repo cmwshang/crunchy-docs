@@ -856,3 +856,20 @@ i.fa.small:before {
   }
 
 } /* End max-width: 767px */
+
+/*********************************************************************************/
+/* Table Styles                                                                  */
+/*********************************************************************************/
+
+table, th, td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.tableblock {
+    padding: 1em 0 2em 0;
+}
+
+.title {
+    color: #419bdc;
+}
