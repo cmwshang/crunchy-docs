@@ -12,3 +12,8 @@ if(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
 window.addEventListener("hashchange", function () {
     window.scrollTo(window.scrollX, window.scrollY - 50);
 });
+
+$('a.disabled').click(function(e)
+{
+    e.preventDefault();
+});
