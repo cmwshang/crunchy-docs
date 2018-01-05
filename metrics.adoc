@@ -15,8 +15,6 @@ Grafana is open source, adaptable and efficient data conceptualization software.
 
 To start collection of metrics on a PostgreSQL database, you add the crunchy-collect container into the pod that holds the crunchy-postgres container.
 
-image::images/after.png[alt=Crunchy Containers Metrics Collection,width=700,height=700]
-
 === Overview
 
 Metrics are stored in the crunchy-prometheus container, which runs the Prometheus time series database. It scrapes the crunchy-collect container which hosts the postgres_exporter and node_exporter for PostgreSQL server metrics as well as host and OS level metrics. These metrics are then pushed to crunchy-grafana in order to visualize the results.
@@ -336,6 +334,8 @@ usage, GAUGE, Disk space used by the database, `SELECT pg_database_size(pg_datab
 
 Some more information on creating custom Grafana dashboards can be found in the official documentation - http://docs.grafana.org/guides/getting_started/.
 You can create dashboards of various graphs using the Grafana Dashboard editor, but the following images display the default Grafana template that comes packaged in the Metrics suite:
+
+
 
 image::images/grafana-dashboard-1.png[]
 
