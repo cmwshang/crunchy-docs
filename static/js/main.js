@@ -21,7 +21,12 @@ $('a.disabled').click(function(e)
 $('.sidebar-nav li:has(ul)').addClass('has-child');
 
 $(document).ready(function() {
-	// get current URL path and assign 'active' class
-	var pathname = window.location.pathname;
-	$('nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+
+  $("h2").each(function() {
+    var text = $(this).text()
+    var id = $(this).attr("id")
+    var navLink = "<li><a href='#" + id + "'>" + text + "</a></li>"
+    $("#nav").append(navLink)
+  })
+
 })

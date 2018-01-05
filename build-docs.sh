@@ -13,48 +13,63 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-NAME=$1
-OPERATION=$2
+NAME="$1"
+OPERATION="$2"
 
 if [[ "$#" -le 1 ]]; then
   echo "Usage:"
   echo "   $0 <name> <operation>"
-  echo "   - name: about | install | usage | metrics | pitr | dedicated | containers | backrest"
+  echo "   - name: all | about | install | usage | metrics | pitr | dedicated | containers | backrest"
   echo "   - operation: create | delete"
   exit
 fi
 
 function create {
-  export TITLE=`echo "${NAME^}"`
-  
-  python asciidoc.py --no-header-footer -o ./templates/pages/temp.html ./$NAME.adoc
+  local cname="$1"
 
-  # This won't be necessary to include after the modified converter
+  # Define page title
+  export TITLE=`echo "${cname^}"`
 
-  rm ./templates/pages/$NAME.html
+  # Convert documentation using asciidoctor
+  python asciidoc.py --no-header-footer -o ./templates/pages/temp.html ./$cname.adoc
 
+  # Clean up the old HTML file
+  rm -f ./templates/pages/$cname.html
+
+  # Add necessary surrounding tags
   echo "{%extends \"base.html\" %}
   {%block title%}$TITLE | Crunchy Container Suite{%endblock%}
   {%block pagetitle%}Crunchy Container Suite{%endblock%}
-  {%block content%}" >> ./templates/pages/$NAME.html
+  {%block content%}" >> ./templates/pages/$cname.html
+  cat ./templates/pages/temp.html >> ./templates/pages/$cname.html
+  echo "{% endblock %}" >> ./templates/pages/$cname.html
 
-  cat ./templates/pages/temp.html >> ./templates/pages/$NAME.html
-  echo "{% endblock %}" >> ./templates/pages/$NAME.html
-
+  # Clean up the temporary file
   rm ./templates/pages/temp.html
 
-  sed -i -e 's:\bimages/\S*\.png\b:{{media("&")}}:g' ./templates/pages/$NAME.html
+  # Substitute media tags
+  sed -i -e 's:\bimages/\S*\.png\b:{{media("&")}}:g' ./templates/pages/$cname.html
 }
 
 function delete {
-  rm ./templates/pages/$NAME.html
+  local cname="$1"
+
+  rm -f ./templates/pages/$cname.html
 }
 
-case $OPERATION in
-  create)
-    create
-    ;;
-  delete)
-    delete
-    ;;
-esac
+if [[ ${NAME?} == "all" ]]; then
+  docs="about install usage metrics pitr dedicated containers backrest"
+else
+  docs="${NAME}"
+fi
+
+for doc in $docs; do
+  case $OPERATION in
+    create)
+      create "$doc"
+      ;;
+    delete)
+      delete "$doc"
+      ;;
+  esac
+done
