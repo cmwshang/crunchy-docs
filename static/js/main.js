@@ -20,8 +20,8 @@ $('a.disabled').click(function(e)
 
 $('.sidebar-nav li:has(ul)').addClass('has-child');
 
-//remove the active class from all items, if there is any
-$('.nav>li').removeClass('active');
-
-//finally, add the active class to the current item
-$('a[href='+ location.pathname.substring(1) +']').parent().addClass('active');
+$(document).ready(function() {
+	// get current URL path and assign 'active' class
+	var pathname = window.location.pathname;
+	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+})
