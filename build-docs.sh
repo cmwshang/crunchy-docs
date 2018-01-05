@@ -25,6 +25,8 @@ if [[ "$#" -le 1 ]]; then
 fi
 
 function create {
+  export TITLE=`echo "${NAME^}"`
+  
   python asciidoc.py --no-header-footer -o ./templates/pages/temp.html ./$NAME.adoc
 
   # This won't be necessary to include after the modified converter
@@ -32,7 +34,7 @@ function create {
   rm ./templates/pages/$NAME.html
 
   echo "{%extends \"base.html\" %}
-  {%block title%}Installation | Crunchy Container Suite{%endblock%}
+  {%block title%}$TITLE | Crunchy Container Suite{%endblock%}
   {%block pagetitle%}Crunchy Container Suite{%endblock%}
   {%block content%}" >> ./templates/pages/$NAME.html
 
