@@ -3,19 +3,16 @@
   {%block pagetitle%}Crunchy Container Suite{%endblock%}
   {%block content%}
 <div class="sect1">
-<h2 id="_description">Description</h2>
+<h2 id="_metrics_collection">Metrics Collection</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>70 different PostgreSQL metrics are collected by the crunchy-collect container, which executes both the postgres_exporter and node_exporter. Written in Go, these are both metrics exporters that work with Prometheus to provide PostgreSQL server metrics in addition to hardware and OS metrics. The crunchy-collect container gathers different metrics from the crunchy-postgres PostgreSQL database container and pushes these to the Prometheus Promgateway.</p></div>
 <div class="paragraph"><p>The collector is similar to the Prometheus Pushgateway, in that it allows exporting of statistics from batch jobs. It can also be used to export static metrics, such as what role a machine has. These SQL metrics are pushed to the crunchy-promgateway container, which holds the Prometheus Promgateway. This container is then scraped by crunchy-prometheus which hosts Prometheus. Grafana runs from crunchy-grafana, which displays the collected PostgreSQL metrics from the crunchy-prometheus container as a data source and uses the metrics to build dashboards. The Grafana template used is defined by default using a JSON template and is indexed by Grafana as an accessible dashboard.</p></div>
 <div class="paragraph"><p>Prometheus is a multi-dimensional time series data model with an elastic query language. It is used in collaboration with Grafana in this metrics suite. Overall, it’s reliable, manageable, and operationally simple for efficiently storing and analyzing data for large-scale environments. It targets the Promgateway as an endpoint for scraping metrics.</p></div>
 <div class="paragraph"><p>Grafana is open source, adaptable and efficient data conceptualization software. This technology is capable of converting raw data to beautifully represented graphs, allowing you to easily monitor your database with a glance. In addition, it has a strong query and transformation language that allows for instantaneous and complex combinations of metrics, queries, correlations, and mathematical graphing.</p></div>
 <div class="paragraph"><p>To start collection of metrics on a PostgreSQL database, you add the crunchy-collect container into the pod that holds the crunchy-postgres container.</p></div>
-<div class="sect2">
-<h3 id="_structure">Structure</h3>
 <div class="imageblock">
 <div class="content">
 <img src="{{media("images/after.png")}}" alt="alt=Crunchy Containers Metrics Collection" />
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -69,9 +66,7 @@ DATA_SOURCE_NAME - The URL for the PostgreSQL server&#8217;s data source name. T
 </ul></div>
 </div>
 <div class="sect2">
-<h3 id="_examples">Examples</h3>
-<div class="sect3">
-<h4 id="_docker">Docker</h4>
+<h3 id="_docker">Docker</h3>
 <div class="paragraph"><p>You can collect various PostgreSQL metrics from your database container by running a
 crunchy-collect container that points to your database container.</p></div>
 <div class="paragraph"><p>To start this set of containers, run the following:</p></div>
@@ -121,8 +116,8 @@ firewall-cmd --permanent --zone metrics --add-port 3000/tcp
 firewall-cmd --reload</code></pre>
 </div></div>
 </div>
-<div class="sect3">
-<h4 id="_kubernetes">Kubernetes</h4>
+<div class="sect2">
+<h3 id="_kubernetes">Kubernetes</h3>
 <div class="paragraph"><p>This example starts up Prometheus and Grafana.</p></div>
 <div class="paragraph"><p>It is required to view or capture metrics collected by crunchy-collect.</p></div>
 <div class="paragraph"><p>Running the example:</p></div>
@@ -189,8 +184,8 @@ this command:</p></div>
 <pre><code>psql -h primary-collect -U postgres postgres</code></pre>
 </div></div>
 </div>
-<div class="sect3">
-<h4 id="_openshift">OpenShift</h4>
+<div class="sect2">
+<h3 id="_openshift">OpenShift</h3>
 <div class="paragraph"><p>This example starts up Prometheus and Grafana.</p></div>
 <div class="paragraph"><p>It is required to view or capture metrics collected by crunchy-collect.</p></div>
 <div class="paragraph"><p>First, create the crunchy-metrics pod which contains
@@ -241,22 +236,16 @@ firewall-cmd --permanent --zone metrics --add-port 3000/tcp
 firewall-cmd --reload</code></pre>
 </div></div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_collected_metrics">Collected Metrics</h2>
-<div class="sectionbody">
 <div class="sect2">
 <h3 id="_node_exporter">node_exporter</h3>
 <div class="paragraph"><p>The tables below list all existing collectors that are gathered by the <a href="https://github.com/prometheus/node_exporter">node_exporter</a>.
 This tool collects hardware and OS level metrics exposed by the kernel as part of the crunchy-collect container.</p></div>
+<div class="paragraph"><div class="title"><strong>Table 1: Enabled by Default</strong></div><p>This table lists all metrics collected by default with the node_exporter.</p></div>
 <div class="tableblock">
 <table rules="all"
 width="100%"
 frame="border"
 cellspacing="0" cellpadding="4">
-<strong>Table 1: Enabled by Default</strong>
 <col width="50%" />
 <col width="50%" />
 <thead>
@@ -705,11 +694,8 @@ cellspacing="0" cellpadding="4">
 </div>
 <div style="page-break-after:always"></div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_grafana_dashboard">Grafana Dashboard</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_grafana_dashboard">Grafana Dashboard</h3>
 <div class="paragraph"><p>You can create dashboards of various graphs using the Grafana Dashboard editor, but the following images display the default Grafana template that comes packaged in the Metrics suite:</p></div>
 <div class="imageblock">
 <div class="content">
@@ -743,6 +729,7 @@ cellspacing="0" cellpadding="4">
 </div>
 <div class="paragraph"><p>Some more information on creating custom Grafana dashboards can be found in the official documentation - <a href="http://docs.grafana.org/guides/getting_started/">http://docs.grafana.org/guides/getting_started/</a>.</p></div>
 <div style="page-break-after:always"></div>
+</div>
 </div>
 </div>
 <div class="sect1">
