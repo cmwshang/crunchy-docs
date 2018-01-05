@@ -348,6 +348,9 @@ image::images/grafana-dashboard-5.png[]
 
 image::images/grafana-dashboard-6.png[]
 
+
+
+
 Some more information on creating custom Grafana dashboards can be found in the official documentation - http://docs.grafana.org/guides/getting_started/.
 
 <<<
