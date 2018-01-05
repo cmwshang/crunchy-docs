@@ -334,6 +334,7 @@ usage, GAUGE, Disk space used by the database, `SELECT pg_database_size(pg_datab
 <<<
 === Grafana Dashboard
 
+Some more information on creating custom Grafana dashboards can be found in the official documentation - http://docs.grafana.org/guides/getting_started/.
 You can create dashboards of various graphs using the Grafana Dashboard editor, but the following images display the default Grafana template that comes packaged in the Metrics suite:
 
 image::images/grafana-dashboard-1.png[]
@@ -349,9 +350,6 @@ image::images/grafana-dashboard-5.png[]
 image::images/grafana-dashboard-6.png[]
 
 
-
-
-Some more information on creating custom Grafana dashboards can be found in the official documentation - http://docs.grafana.org/guides/getting_started/.
 
 <<<
 == Legal Notices
