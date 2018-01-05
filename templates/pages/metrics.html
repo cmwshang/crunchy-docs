@@ -10,11 +10,6 @@
 <div class="paragraph"><p>Prometheus is a multi-dimensional time series data model with an elastic query language. It is used in collaboration with Grafana in this metrics suite. Overall, it’s reliable, manageable, and operationally simple for efficiently storing and analyzing data for large-scale environments. It targets the Promgateway as an endpoint for scraping metrics.</p></div>
 <div class="paragraph"><p>Grafana is open source, adaptable and efficient data conceptualization software. This technology is capable of converting raw data to beautifully represented graphs, allowing you to easily monitor your database with a glance. In addition, it has a strong query and transformation language that allows for instantaneous and complex combinations of metrics, queries, correlations, and mathematical graphing.</p></div>
 <div class="paragraph"><p>To start collection of metrics on a PostgreSQL database, you add the crunchy-collect container into the pod that holds the crunchy-postgres container.</p></div>
-<div class="imageblock">
-<div class="content">
-<img src="{{media("images/after.png")}}" alt="alt=Crunchy Containers Metrics Collection" />
-</div>
-</div>
 <div class="sect2">
 <h3 id="_overview">Overview</h3>
 <div class="paragraph"><p>Metrics are stored in the crunchy-prometheus container, which runs the Prometheus time series database. It scrapes the crunchy-collect container which hosts the postgres_exporter and node_exporter for PostgreSQL server metrics as well as host and OS level metrics. These metrics are then pushed to crunchy-grafana in order to visualize the results.</p></div>
