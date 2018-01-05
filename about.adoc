@@ -1,4 +1,4 @@
-== About the Crunchy PostgreSQL Containers
+== About
 v1.7, {docdate}
 
 
