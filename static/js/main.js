@@ -20,13 +20,8 @@ $('a.disabled').click(function(e)
 
 $('.sidebar-nav li:has(ul)').addClass('has-child');
 
-$(document).ready(function(){
-    $('li').removeClass('active');
-    $('li a').each(function() {
-       $found = $.contains($(this).prop("href"),location.pathname);
-       if ($found) {
-           $(this).closest('li').addClass('active');
-           break;
-        }
-    });
+$(function(){
+    var sPath = window.location.pathname;
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+    $('a[href="'+ sPage +'"]').parent().addClass('active');
 });
