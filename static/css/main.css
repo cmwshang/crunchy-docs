@@ -278,6 +278,13 @@ li.last-item {
     background-color: #fff;
   }
 
+  .highlights a {
+    text-align: left;
+    display: block;
+    margin: 1em 0;
+    padding-left: 0;
+  }
+
 }
 
 #wrapper {
@@ -920,6 +927,7 @@ i.fa.small:before {
   }
 
 } /* End max-width: 767px */
+
 
 /*********************************************************************************/
 /* Table Styles                                                                  */
