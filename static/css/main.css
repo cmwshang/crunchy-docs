@@ -285,6 +285,10 @@ li.last-item {
     padding-left: 0;
   }
 
+  .sect1 {
+      margin-top: 0;
+  }
+
 }
 
 #wrapper {
