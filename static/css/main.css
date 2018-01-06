@@ -263,6 +263,8 @@ li.last-item {
   .navbar {
     color: #01a3e4;
     background-color: #fff;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
   }
 
   .navbar-nav > li.active,
@@ -274,58 +276,6 @@ li.last-item {
 
   .dropdown-menu, .dropdown-menu li, .dropdown-menu li a {
     background-color: #fff;
-  }
-
-}
-
-/*********************************************************************************/
-/* Transitioning Menu                                                            */
-/*********************************************************************************/
-
-@media(min-width:768px) {
-  .navbar-container.fixedtheme .navbar-brand {
-      padding: 10px;
-  }
-
-  .navbar-container.fixedtheme .navbar-brand img {
-    display: block;
-    max-height: 30px;
-  }
-
-  .navbar-container {
-      padding: 10px 0;
-  }
-
-  .navbar.navbar-fixed-top.fixedtheme {
-      background-color: #fff;
-      border-color: #080808;
-      box-shadow: 0 0 5px rgba(0,0,0,.8);
-  }
-
-  .navbar-brand.fixedtheme {
-      font-size: 18px;
-  }
-
-  div#header-container {
-    background-color: transparent;
-  }
-
-  div#header-container.fixedtheme {
-      padding: 0 !important;
-  }
-
-  .navbar-brand.fixedtheme,
-  .navbar-container.fixedtheme,
-  .navbar-container.fixedtheme .navbar-brand img,
-  .navbar-container.fixedtheme .navbar-brand,
-  .navbar.navbar-fixed-top.fixedtheme,
-  .navbar-brand,
-  nav.fixedtheme,
-  .navbar-container{
-    transition: all 0.8s ease;
-    -moz-transition: all 0.8s ease; /* Firefox 4 */
-    -webkit-transition: all 0.8s ease; /* Safari and Chrome */
-    -o-transition: all 0.8s ease; /* Opera */
   }
 
 }
