@@ -91,7 +91,7 @@ You can add applications to this project with the 'new-app' command. For example
 to build a new example application in Ruby.
 ....
 
-If we view the list of projects, we can see the new project has been added and is "active".
+If we view the list of projects, we can see the new project has been added and is ``active''.
 ....
 $ oc get projects
 NAME        DISPLAY NAME         STATUS
@@ -230,9 +230,9 @@ how the /pgconf mount is related to the configmap.
 
 An example of using OpenShift Templates to build pods, routes, services, etc can be
 found in the following directory:
-….
+....
 $CCPROOT/examples/openshift/workshop
-….
+....
 
 You use the *oc new-app* command to create objects from the
 JSON templates.  This is an alternative way to create OpenShift objects
@@ -1136,7 +1136,7 @@ configuration file.  The example creates a Service named
 *crunchy-proxy* that you can use to access the configured
 PostgreSQL backend containers from the *primary-replica* example.
 
-SQL "reads" will be sent to the PostgreSQL replica database if your
+SQL ``reads'' will be sent to the PostgreSQL replica database if your
 SQL includes the *crunchy-proxy* read annotation.  SQL statements
 that do not include the read annotation will be sent to the primary
 database container within the PostgreSQL cluster.
@@ -1291,9 +1291,10 @@ To shutdown the instance and remove the container for each example, run the foll
 ==== Docker
 
 To run the example:
- * modify the run-badger.sh script to refer to the Docker container that you want to run pgbadger against
- * refer to the container’s data directory
- * start the container that you are referencing
+
+* modify the run-badger.sh script to refer to the Docker container that you want to run pgbadger against
+* refer to the container's data directory
+* start the container that you are referencing
 
 Then, run the example as follows:
 ....
@@ -1791,9 +1792,9 @@ Kubernetes and OpenShift environments:
 psql -h primarysync -U postgres postgres -c 'create table test (id int)'
 psql -h primarysync -U postgres postgres -c 'insert into test values (1)'
 psql -h primarysync -U postgres postgres -c 'table pg_stat_replication'
-psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test’
-psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test’
-psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test’
+psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test'
+psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test'
+psql -h replicasync -U postgres postgres -c 'select inet_server_addr(), * from test'
 ....
 
 This set of queries will show you the IP address of the PostgreSQL replica
@@ -1815,7 +1816,7 @@ cd $CCPROOT/examples/docker/sync
 ....
 
 You can test the replication status on the primary by using the following command
-and the password "password":
+and the password ``password'':
 ....
 psql -h 127.0.0.1 -p 12000 -U postgres postgres -c 'table pg_stat_replication'
 ....
@@ -2367,6 +2368,6 @@ test database should be found in the *primary-upgrade* database.
 
 Copyright © 2018 Crunchy Data Solutions, Inc.
 
-CRUNCHY DATA SOLUTIONS, INC. PROVIDES THIS GUIDE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF NON INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+CRUNCHY DATA SOLUTIONS, INC. PROVIDES THIS GUIDE ``AS IS'' WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF NON INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
 
 Crunchy, Crunchy Data Solutions, Inc. and the Crunchy Hippo Logo are trademarks of Crunchy Data Solutions, Inc.
