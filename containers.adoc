@@ -473,6 +473,7 @@ environment variables:
 A cron expression represents a set of times, using 6 space-separated fields.
 
 .Table Fields
+[options="header"]
 |===
 |Field name   | Mandatory? | Allowed values  | Allowed special characters
 
@@ -550,6 +551,7 @@ day-of-week blank.
 You may use one of several pre-defined schedules in place of a cron expression.
 
 .Table Predefined Schedules
+[options="header"]
 |===
 |Entry|Description|Equivalent To
 
