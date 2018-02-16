@@ -391,7 +391,7 @@ passwords:
  * externalize your passwords using secrets instead of using generated values
  * manually update your passwords to your known values after a restore
 
-*Note*: Environment variables can be modified when there is a a deployment
+NOTE: Environment variables can be modified when there is a a deployment
 controller in use. Currently, only the replicas have a deployment controller in
 order to avoid the possibility of creating multiple primaries.
 ....
@@ -629,7 +629,7 @@ Next, using psql, connect to the service:
 psql -d userdb -h 0.0.0.0 -p <CONTAINER_PORT> -U testuser
 ....
 
-*Note:* See *PG_PASSWORD* in *docker-compose.yml* for the user password.
+NOTE: See *PG_PASSWORD* in *docker-compose.yml* for the user password.
 
 To tear down the example, run the following:
 ....
@@ -1165,7 +1165,7 @@ psql -h localhost -p 12432 -U postgres postgres
 
 ==== Kubernetes
 
-*Note*: If you run the example in minikube, you will need to manually
+NOTE: If you run the example in minikube, you will need to manually
 copy the crunchy-proxy-config.json file to a file on
 the minikube named */data/config.json*.
 

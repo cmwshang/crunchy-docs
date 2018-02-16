@@ -263,7 +263,7 @@ Detailed instructions that you can use for setting up a NFS server on Centos 7 a
 
 http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-setup-nfs-server-on-centos-7-rhel-7-fedora-22.html
 
-*Note*: Most of the Crunchy containers run as the postgres UID (26), but you
+NOTE: Most of the Crunchy containers run as the postgres UID (26), but you
 will notice that when *supplementalGroups* are specified, the pod
 will include the nfsnobody group in the list of groups for the pod user.
 
@@ -302,7 +302,7 @@ cd $CCPROOT/examples/pv
 ./create-pvc.sh
 ....
 
-*Note*: If you elect to configure HostPath or GCE as your storage option, please view
+NOTE: If you elect to configure HostPath or GCE as your storage option, please view
 README.txt for command-line usage for the ./create-pv.sh command.
 
 == OpenShift Environment
@@ -312,7 +312,7 @@ OpenShift Enterprise on your host. The main instructions are here:
 
 https://docs.openshift.com/container-platform/3.6/install_config/install/quick_install.html
 
-*Note:* If you install OpenShift Enterprise on a server with less than `16GB` memory and `40GB`
+NOTE: If you install OpenShift Enterprise on a server with less than `16GB` memory and `40GB`
 of disk, the following Ansible variables need to be added to `~/.config/openshift/installer.cfg.yml`
 prior to installation:
 
