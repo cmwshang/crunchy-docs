@@ -1987,7 +1987,7 @@ It takes about 1 minute for the database to become ready for use after initially
 This database is created with the ARCHIVE_MODE and ARCHIVE_TIMEOUT
 environment variables set.
 
-*Warning*:  WAL segment files are written to the /tmp directory. Leaving the example running
+WARNING:  WAL segment files are written to the /tmp directory. Leaving the example running
 for a long time could fill up your /tmp directory.
 
 To shutdown the instance and remove the container for each example, run the following:
