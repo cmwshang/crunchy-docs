@@ -1,6 +1,6 @@
 = OpenShift Dedicated Examples - Crunchy Containers for PostgreSQL
 Crunchy Data Solutions, Inc.
-v1.7, {docdate}
+v1.8.1, {docdate}
 :title-logo-image: image::images/crunchy_logo.png["CrunchyData Logo",align="center",scaledwidth="80%"]
 
 == OpenShift Dedicated Environment
@@ -46,8 +46,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export CCP_BASEOS=centos7
 export CCP_PGVERSION=10
-export CCP_PG_FULLVERSION=10.1
-export CCP_VERSION=1.7.0
+export CCP_PG_FULLVERSION=10.3
+export CCP_VERSION=1.8.1
 export CCP_IMAGE_PREFIX=crunchydata
 export CCP_IMAGE_TAG=$CCP_BASEOS-$CCP_PG_FULLVERSION-$CCP_VERSION
 export CCPROOT=$GOPATH/src/github.com/crunchydata/crunchy-containers
@@ -60,7 +60,7 @@ export TOKEN=yourtokengoeshere
 export REG=docker-registry-default.router.default.svc.cluster.local
 export REG=172.30.240.45:5000
 export REG=registry.crunchydata.openshift.com
-export NAMESPACE=default
+export CCP_NAMESPACE=demo
 ....
 You will then need to log out and back in for the changes to your .bashrc
 file to take effect.
@@ -76,7 +76,7 @@ mkdir crunchydata
 cd crunchydata
 git clone https://github.com/crunchydata/crunchy-containers
 cd crunchy-containers
-git checkout 1.7.0
+git checkout 1.8.1
 godep restore
 ....
 
@@ -342,6 +342,7 @@ This example deploys a primary database configuration
 which uses a Persistent Volume Claim for persistence.
 
 .Table Template Parameters
+[options="header"]
 |===
 |Parameter|Description|Default
 
@@ -387,7 +388,7 @@ which uses a Persistent Volume Claim for persistence.
 
 |CCP_IMAGE_TAG
 | the image version to use for the container
-| rhel7-9.6.6-1.7.0
+| rhel7-9.6.8-1.8.1
 
 |CCP_IMAGE_PREFIX
 | the image prefix to use, typically the image stream prefix of your registry
@@ -450,6 +451,7 @@ will create a backup of a database and store the backup
 files in a PVC.
 
 .Table Template Parameters
+[options="header"]
 |===
 |Parameter|Description|Default
 
@@ -482,12 +484,12 @@ files in a PVC.
 | primary
 
 |CCP_IMAGE_PREFIX
-| the container image prefix to use, typically the registy IP address and namespace
+| the container image prefix to use, typically the registry IP address and namespace
 | 172.30.149.135:5000/default
 
 |CCP_IMAGE_TAG
 | the container image version to use
-| rhel7-9.6.6-1.7.0
+| rhel7-9.6.8-1.8.1
 |===
 
 === Restore Database Template
@@ -508,6 +510,7 @@ This example performs a database restore using a backup archive
 found in a PVC.
 
 .Table Template Parameters
+[options="header"]
 |===
 |Parameter|Description|Default
 
@@ -577,7 +580,7 @@ found in a PVC.
 
 |CCP_IMAGE_TAG
 | the container image version to use
-| rhel7-9.6.6-1.7.0
+| rhel7-9.6.8-1.8.1
 |===
 
 === Replica Database Template
@@ -595,6 +598,7 @@ These templates create the following:
  * service for replica
 
 .Table Template Parameters
+[options="header"]
 |===
 |Parameter|Description|Default
 
@@ -640,7 +644,7 @@ These templates create the following:
 
 |CCP_IMAGE_TAG
 | the container image version to use
-| rhel7-9.6.6-1.7.0
+| rhel7-9.6.8-1.8.1
 |===
 
 === pgadmin4 Web User Interface Template
@@ -659,6 +663,7 @@ This template will create the following:
  * service for the pgadmin4 container
 
 .Table Template Parameters
+[options="header"]
 |===
 |Parameter|Description|Default
 
@@ -684,7 +689,7 @@ This template will create the following:
 
 |CCP_IMAGE_TAG
 | the container image version to use
-| rhel7-9.6.6-1.7.0
+| rhel7-9.6.8-1.8.1
 |===
 
 

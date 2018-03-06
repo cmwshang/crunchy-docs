@@ -1,6 +1,6 @@
 = Metrics Collection - Crunchy Containers for PostgreSQL
 Crunchy Data Solutions, Inc.
-v1.7, {docdate}
+v1.8.1, {docdate}
 :title-logo-image: image:images/crunchy_logo.png["CrunchyData Logo",align="center",scaledwidth="80%"]
 
 == Metrics Collection
@@ -14,6 +14,8 @@ Prometheus is a multi-dimensional time series data model with an elastic query l
 Grafana is open source, adaptable and efficient data conceptualization software. This technology is capable of converting raw data to beautifully represented graphs, allowing you to easily monitor your database with a glance. In addition, it has a strong query and transformation language that allows for instantaneous and complex combinations of metrics, queries, correlations, and mathematical graphing.
 
 To start collection of metrics on a PostgreSQL database, you add the crunchy-collect container into the pod that holds the crunchy-postgres container.
+
+image::images/after.png[alt=Crunchy Containers Metrics Collection,width=700,height=700]
 
 === Overview
 
@@ -247,10 +249,11 @@ systemd, Exposes service and system status from link:http://www.freedesktop.org/
 tcpstat, Exposes TCP connection status information from `/proc/net/tcp` and `/proc/net/tcp6`. (Warning: the current version has potential performance issues in high load situations.)
 |===
 
+
 These metrics will be deprecated and (re)moved in future releases of node_exporter.
 
 .Deprecated
-[width="100%"]
+[options="header"]
 |===
 | Name | Description
 
@@ -318,12 +321,48 @@ datname, LABEL, Name of the database, `SELECT pg_database.datname as size FROM p
 usage, GAUGE, Disk space used by the database, `SELECT pg_database_size(pg_database.datname) as size FROM pg_database`
 |===
 
-<<<
+
 === Grafana Dashboard
 
-Some more information on creating custom Grafana dashboards can be found in the official documentation - http://docs.grafana.org/guides/getting_started/.
-You can create dashboards of various graphs using the Grafana Dashboard editor, but the following images display the default Grafana template that comes packaged in the Metrics suite:
+Some information on creating custom Grafana dashboards can be found in the official documentation -
+http://docs.grafana.org/guides/getting_started/.
 
+There is a sample dashboard included in the Metrics Suite which you can take advantage of instead of
+creating a dashboard from scratch. The instructions provided below explain how to get started with using
+the Grafana web interface and upload the dashboard for use.
+
+The following instructions assume you already have the *crunchy-metrics* and *primary-collect* examples running
+for your chosen environment.
+
+Connect to the Grafana web instance using the following address:
+....
+http://crunchy-metrics:3000
+....
+
+The username and password are both *admin* by default. It is a recommended security measure to change these values.
+
+After logging in, you'll be taken to a ``Home Dashboard'' page. Click ``add data source'', where you'll be taken to
+a page to populate your data source. In this instance, you'll want to select ``type'' as being ``Prometheus'' and change
+the URL to point to ``http://localhost:9090''. The screen should appear like this after you've finished:
+
+
+image::images/grafana_s1.png[]
+
+
+Next, the dashboard needs to be imported as a JSON file. Navigate to the upper left corner and select the
+Grafana logo for the menu, then to Dashboards -> Import. Select ``Upload JSON File'' and upload the following
+JSON file:
+....
+$CCPROOT/conf/grafana/dashboards/PostgreSQL.json
+....
+
+The ``Import Datasource'' box should look similar to this before clicking ``Import'':
+
+
+image::images/grafana_s2.png[]
+
+
+The following images display the different metrics the included dashboard provides.
 
 
 image::images/grafana-dashboard-1.png[]
@@ -332,15 +371,7 @@ image::images/grafana-dashboard-2.png[]
 
 image::images/grafana-dashboard-3.png[]
 
-image::images/grafana-dashboard-4.png[]
 
-image::images/grafana-dashboard-5.png[]
-
-image::images/grafana-dashboard-6.png[]
-
-
-
-<<<
 == Legal Notices
 
 Copyright © 2018 Crunchy Data Solutions, Inc.

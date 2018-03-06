@@ -1,6 +1,6 @@
 = pgbackrest Support in Crunchy Container Suite
 Crunchy Data Solutions, Inc.
-v1.7, {docdate}
+v1.8.1, {docdate}
 :title-logo-image: image::images/crunchy_logo.png["CrunchyData Logo",align="center",scaledwidth="80%"]
 
 == Description
@@ -38,8 +38,14 @@ file:
 ....
 ARCHIVE_MODE=on
 ARCHIVE_TIMEOUT=60
-ARCHIVE_COMMAND='pgbackrest --config=/pgconf/pgbackrest.conf --stanza=db a
-rchive-push %p'
+ARCHIVE_COMMAND='pgbackrest --stanza=db archive-push %p'
+....
+
+If you are using a postgres image older than *1.7.1*, *archive_command* must specify where
+the *pgbackrest.conf* file is located:
+
+....
+ARCHIVE_COMMAND='pgbackrest --config=/pgconf/pgbackrest.conf --stanza=db archive-push %p'
 ....
 
 This requires you use a pgbackrest stanza name of *db* within the
@@ -57,7 +63,7 @@ Once you configure the crunchy-postgres container to use pgbackrest, you
 will perform a backup using the following commands:
 ....
 docker exec -it primary-backrest bash
-/usr/bin/pgbackrest --config=/pgconf/pgbackrest.conf --log-path=/backrestrepo --stanza=db backup
+/usr/bin/pgbackrest --stanza=db backup
 ....
 
 Examine the contents of the mounted /backrestrepo directory to
@@ -85,6 +91,7 @@ to view the archive directory and ensure WAL archiving is working.
 ==== OpenShift
 
 Start by running the example database container:
+
 ....
 cd $CCPROOT/examples/openshift/backrest
 ./run.sh
@@ -107,10 +114,14 @@ as well to use this.
 After you run the example, you should see archive files
 being written to the /backrestrepo volume (/mnt/nfsfileshare/backrestrepo).
 
+
+==== Manual Backup
+
 You can create a backup using backrest using this command within
 the container:
+
 ....
-/opt/cpm/bin/backup.sh
+pgbackrest --stanza=db backup
 ....
 
 === Performing a Restore
